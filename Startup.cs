@@ -48,6 +48,9 @@ namespace BlazorServerAndMVC
             {
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
+
+                // 👇 (5) ワイルドカードルート定義は削除し、代わりに MVC コントローラへのフォールバック指定を Startup で追加
+                endpoints.MapFallbackToController(action: "Index", controller: "Home");
             });
         }
     }
