@@ -42,8 +42,8 @@ namespace BlazorServerAndMVC
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles(); // 👈 (2) 静的ファイルミドルウェアを先に、順序を入れ替え
             app.UseRouting();
-            app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
